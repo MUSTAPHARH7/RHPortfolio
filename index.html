@@ -117,43 +117,6 @@
     }
     
     /* Hero Section */
-    /* Add these styles to your existing CSS */
-  .hero-profile {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
-    border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.2);
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: pulse 2s infinite alternate;
-  }
-  
-  .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .hero-profile:hover .profile-image {
-    transform: scale(1.05);
-  }
-  
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
-    }
-    100% {
-      box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
-    }
-  }
-  
-  /* Adjust existing hero styles */
-  .hero-content {
-    padding-top: 40px; /* Give space for profile image */
-  }
     .hero {
       height: 100vh;
       display: flex;
@@ -642,6 +605,55 @@
         display: block;
       }
     }
+
+   
+  /* Add these styles to your existing CSS */
+  .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: left;
+  }
+  
+  .hero-left {
+    flex: 0 0 120px; /* Smaller fixed width */
+  }
+  
+  .hero-right {
+    flex: 1;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.3);
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Adjust animations */
+  .animate__fadeInLeft {
+    animation-delay: 0.3s;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .hero-left {
+      margin-bottom: 20px;
+    }
+    
+    .profile-image {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -662,18 +674,20 @@
     </div>
   </header>
 
- <!-- Hero Section -->
+<!-- Hero Section -->
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-profile">
-        <img src="assets/img/PROF2.jpg" alt="Mustapha Rahmoun" class="profile-image animate__animated animate__zoomIn">
+      <div class="hero-left">
+        <img src="assets/img/pprofile.png" alt="Mustapha Rahmoun" class="profile-image animate__animated animate__fadeInLeft">
       </div>
-      <h1 class="animate__animated animate__fadeInDown">Mustapha Rahmoun</h1>
-      <p class="animate__animated animate__fadeInUp">Network Engineering Student | <span class="typewriter">Cybersecurity Specialist</span></p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn animate__animated animate__fadeInUp">Contact Me</a>
-        <a href="#projects" class="btn btn-outline animate__animated animate__fadeInUp">View Projects</a>
+      <div class="hero-right">
+        <h1 class="animate__animated animate__fadeInDown">Mustapha Rahmoun</h1>
+        <p class="animate__animated animate__fadeInUp">Network Engineering Student | <span class="typewriter">Cybersecurity Specialist</span></p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn animate__animated animate__fadeInUp">Contact Me</a>
+          <a href="#projects" class="btn btn-outline animate__animated animate__fadeInUp">View Projects</a>
+        </div>
       </div>
     </div>
   </div>
